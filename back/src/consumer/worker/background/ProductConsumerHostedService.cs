@@ -18,7 +18,7 @@ public class ProductConsumerBackgroundWorker(IServiceProvider serviceProvider,IL
             using IServiceScope scope = _serviceProvider.CreateScope();
             IQueueConsumerService queueConsumer = scope.ServiceProvider.GetRequiredService<IQueueConsumerService>();
             IProductConsumerWorker worker = scope.ServiceProvider.GetRequiredService<IProductConsumerWorker>();   
-            Product? product = await queueConsumer.Consume();
+            Product? product = await queueConsumer.Consume(stoppingToken);
             if (product == null)
             {
                 int seconds = 5;

@@ -4,5 +4,5 @@ namespace Tariff.Comparison.Domain.Interfaces.Worker;
 
 public interface IQueueConsumerService
 {
-    ValueTask<Product?> Consume();
+    ValueTask<Product?> Consume(CancellationToken token);
 }

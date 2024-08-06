@@ -11,9 +11,9 @@ public class LocalQueue : ILocalQueue
         _channel = Channel.CreateUnbounded<string>();
     }
 
-    public async Task<string> Consume()
+    public async Task<string> Consume(CancellationToken token)
     {
-        return await _channel.Reader.ReadAsync();
+        return await _channel.Reader.ReadAsync(token);
     }
 
     public async Task Publish(string message)

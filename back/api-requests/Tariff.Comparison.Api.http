@@ -1,6 +1,11 @@
 @Tariff.Comparison.Api_HostAddress = http://localhost:5127
 
-GET {{Tariff.Comparison.Api_HostAddress}}/weatherforecast/
+POST {{Tariff.Comparison.Api_HostAddress}}/products/
 Accept: application/json
+Content-Type: application/json
+
+{
+    "annualConsumption": 100
+}
 
 ###
