@@ -16,13 +16,13 @@ public class BasicTariffEvaluatorTest
     public BasicTariffEvaluatorTest()
     {
         ProductTariffDetails details = new(5, 22, null);
-        _p = new("Product", 1, details);
+        _p = new() { Name = "Product", RawType = 1, TariffDetails = details };
         _sut = new();
     }
 
     [Fact]
     public async void ShouldReturnSucceedFalseIfAnnualConsumptionIsNegative()
-    {        
+    {
         EvaluationRequest request = new(_p, -1);
         EvaluationResponse result = await _sut.CalculateAsync(request);
 
@@ -41,5 +41,5 @@ public class BasicTariffEvaluatorTest
 
         Assert.True(result.Successed);
         Assert.Equal(expectedValue, result.Cost);
-    }    
+    }
 }

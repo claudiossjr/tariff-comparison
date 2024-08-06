@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\models\Tariff.Comparison.Consumer.Domain.Models.csproj" />
+    <ProjectReference Include="..\..\..\core\domain\model\Tariff.Comparison.Domain.Model.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -8,10 +8,10 @@ namespace Tariff.Comparison.Provider.Queue.Local;
 public class LocalQueueConsumerService(ILocalQueue queue) : IQueueConsumerService
 {
     private readonly ILocalQueue _queue = queue;
-    public async IAsyncEnumerable<Product?> Consume()
+    public async ValueTask<Product?> Consume()
     {
         string item = await _queue.Consume();
         Product? product = JsonSerializer.Deserialize<Product>(item);
-        yield return product;
+        return product;
     }
 }

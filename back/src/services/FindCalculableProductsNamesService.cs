@@ -10,7 +10,7 @@ public class FindCalculableProductsNamesServices(IFindProductsRepository findPro
     public async Task<IEnumerable<string>> FindAsync()
     {
         await Task.Yield();
-        IList<TariffType> tariffTypes = Enum.GetValues<TariffType>().Where(t => t != TariffType.Unkonwn).ToList();
-        return [.. _findProductsRepository.Find().Where(products => tariffTypes.Contains(products.Type)).Select(products => products.Name)];
+        IList<int> rawTypes = Enum.GetValues<TariffType>().Where(t => t != TariffType.Unkonwn).Select(type => (int)type).ToList();
+        return [.. _findProductsRepository.Find().Where(products => rawTypes.Contains(products.RawType)).Select(products => products.Name)];
     }
 }

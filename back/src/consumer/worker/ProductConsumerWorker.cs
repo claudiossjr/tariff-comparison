@@ -10,10 +10,11 @@ public class ProductConsumerWorker (ICacheService cacheService, ISaveProductRepo
 {
     private readonly ISaveProductRepository _saveProductRepository = saveProductRepository;
     private readonly ICacheService _cacheService = cacheService;
-    public async Task HandleProduct(Product product)
+    public async Task HandleProduct(Product? product)
     {
+        if (product == null) return;
         // Insert on CacheService and repository
-        Task[] tasks = [_cacheService.Create(product.Name, JsonSerializer.Serialize(product)), _saveProductRepository.Save(product)];
+        Task[] tasks = [_cacheService.Create(product!.Name, JsonSerializer.Serialize(product)), _saveProductRepository.Save(product)];
         await Task.WhenAll(tasks);
         
     }

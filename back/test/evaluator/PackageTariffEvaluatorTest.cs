@@ -13,7 +13,7 @@ public class PackageTariffEvaluatorTest
     public PackageTariffEvaluatorTest()
     {
         ProductTariffDetails details = new(800, 30, 4000);
-        _p = new("Product", (int)TariffType.Package, details);
+        _p = new() { Name = "Product", RawType = (int)TariffType.Package, TariffDetails = details};
         _sut = new();
     }
 

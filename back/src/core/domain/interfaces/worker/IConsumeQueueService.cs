@@ -4,5 +4,5 @@ namespace Tariff.Comparison.Domain.Interfaces.Worker;
 
 public interface IQueueConsumerService
 {
-    IAsyncEnumerable<Product?> Consume();
+    ValueTask<Product?> Consume();
 }

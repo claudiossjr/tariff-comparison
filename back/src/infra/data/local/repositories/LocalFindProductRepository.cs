@@ -10,6 +10,6 @@ public class LocalFindProductsRepository(ProductsContext context) : IFindProduct
 
     public IQueryable<Product> Find()
     {
-        return _context.Set<Product>();
+        return _context.Products;
     }
 }

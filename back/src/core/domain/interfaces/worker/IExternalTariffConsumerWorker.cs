@@ -4,5 +4,5 @@ namespace Tariff.Comparison.Domain.Interfaces.Worker;
 
 public interface IProductConsumerWorker
 {
-    Task HandleProduct(Product product);
+    Task HandleProduct(Product? product);
 }

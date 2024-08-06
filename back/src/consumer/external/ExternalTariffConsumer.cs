@@ -1,14 +1,16 @@
 ﻿using Tariff.Comparison.Consumer.Domain.Interfaces;
+using Tariff.Comparison.Consumer.Domain.Interfaces.Adapters;
 using Tariff.Comparison.Consumer.Domain.Models;
 using Tariff.Comparison.Domain.Interfaces.Consumer;
 using Tariff.Comparison.Domain.Model;
 
 namespace Tariff.Comparison.External.Consumer;
 
-public class ExternalTariffConsumer(IExternalClient externalClient, IExternalTariffRegister externalRegister) : IExternalTariffConsumer
+public class ExternalTariffConsumer(IExternalClient externalClient, IExternalTariffRegister externalRegister, IExternalProductConverter externalProductConverter) : IExternalTariffConsumer
 {
     public readonly IExternalClient _externalClient = externalClient;
     public readonly IExternalTariffRegister _externalRegister = externalRegister;
+    private readonly IExternalProductConverter _externalProductConverter = externalProductConverter;
 
     public async Task<bool> Consume()
     {
@@ -18,7 +20,7 @@ public class ExternalTariffConsumer(IExternalClient externalClient, IExternalTar
             // Process Client response
             foreach (ExternalTariff tariff in externalResult)
             {
-                Product product = new(tariff.Name, tariff.Type, new ProductTariffDetails(tariff.BaseCost, tariff.AdditionalKwhCost, tariff.IncludedKwh));
+                Product product = await _externalProductConverter.ConvertAsync(tariff);
                 // Send each item to the queue by calling ExternalTariffRegister
                 await _externalRegister.Register(product);
             }

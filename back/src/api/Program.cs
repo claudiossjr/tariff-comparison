@@ -1,3 +1,4 @@
+using Tariff.Comparison.Api.Controllers;
 using Tariff.Comparison.DI;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapPost("/register", RegisterProductTariffController.RegisterProductAsync);
+app.MapPost("/register/batch", RegisterProductTariffController.RegisterProductBatchAsync);
+
+app.MapGet("/products", FindProductsController.FindProducatsAsync);
 
 app.UseHttpsRedirection();
 

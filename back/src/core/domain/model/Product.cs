@@ -3,7 +3,7 @@ using Tariff.Comparison.Helpers;
 
 namespace Tariff.Comparison.Domain.Model;
 
-public record Product(string Name, int RawType, ProductTariffDetails TariffDetails)
+public class Product
 {
     public TariffType Type
     {
@@ -18,4 +18,8 @@ public record Product(string Name, int RawType, ProductTariffDetails TariffDetai
             return EnumHelper.GetEnumDescription(Type);
         }
     }
+
+    public required string Name { get; set; }
+    public required int RawType { get; set; }
+    public required ProductTariffDetails TariffDetails { get; set; }
 }

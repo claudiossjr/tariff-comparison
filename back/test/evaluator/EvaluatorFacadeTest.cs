@@ -20,13 +20,13 @@ public class EvaluatorFacadeTest
     [InlineData([2])]
     public async void ShouldReturnSuccessedFalseWhenAnnualConsumptionNegative(int rawType)
     {
-        Product p = new("name", rawType, new ProductTariffDetails(1, 1, 1));
+        Product p = new() { Name = "name", RawType = rawType, TariffDetails = new ProductTariffDetails(1, 1, 1) };
         EvaluationRequest request = new(p, -1);
 
         EvaluationResponse response = await _sut.CalculateAsync(request);
 
         Assert.False(response.Successed);
-        
+
     }
 
     [Theory]
@@ -36,10 +36,10 @@ public class EvaluatorFacadeTest
     [InlineData([3, false])]
     public async void ShouldReturnSuccessedTrueWhenAnnualConsumptionNegative(int rawType, bool expected)
     {
-        Product p = new("name", rawType, new ProductTariffDetails(1, 1, 1));
+        Product p = new() { Name = "name", RawType = rawType, TariffDetails = new ProductTariffDetails(1, 1, 1) };
         EvaluationRequest request = new(p, 10);
         EvaluationResponse response = await _sut.CalculateAsync(request);
         Assert.Equal(expected, response.Successed);
-        
+
     }
 }
