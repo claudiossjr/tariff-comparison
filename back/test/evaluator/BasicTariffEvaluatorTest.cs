@@ -24,7 +24,7 @@ public class BasicTariffEvaluatorTest
     public async void ShouldReturnSucceedFalseIfAnnualConsumptionIsNegative()
     {        
         EvaluationRequest request = new(_p, -1);
-        EvaluationResponse result = await _sut.Calculate(request);
+        EvaluationResponse result = await _sut.CalculateAsync(request);
 
         Assert.False(result.Successed);
     }
@@ -37,7 +37,7 @@ public class BasicTariffEvaluatorTest
     public async void ShouldReturn(double annualConsumption, double expectedValue)
     {
         EvaluationRequest request = new(_p, annualConsumption);
-        EvaluationResponse result = await _sut.Calculate(request);
+        EvaluationResponse result = await _sut.CalculateAsync(request);
 
         Assert.True(result.Successed);
         Assert.Equal(expectedValue, result.Cost);

@@ -1,3 +1,3 @@
 namespace Tariff.Comparison.Domain.Interfaces.Products.Request;
 
-public record FindProductsRequest(double AnnualConsumptionEstimated);
+public record FindProductsRequest(double AnnualConsumption);

@@ -6,5 +6,5 @@ namespace Tariff.Comparison.Domain.Interfaces;
 
 public interface IFindProductsService
 {
-    Task<FindProductsResponse> FindProducts(FindProductsRequest request);
+    Task<FindProductsResponse> FindProductsAsync(FindProductsRequest request);
 }

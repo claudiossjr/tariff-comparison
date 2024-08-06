@@ -6,5 +6,5 @@ namespace Tariff.Comparison.Domain.Interfaces.Evaluation;
 
 public interface IEvaluationService
 {
-    Task<EvaluationResponse> Calculate(EvaluationRequest request);
+    Task<EvaluationResponse> CalculateAsync(EvaluationRequest request);
 }

@@ -10,11 +10,11 @@ public class EvaluatorFacade(IEvaluationFactory evaluationFactory) : IEvaluation
 {
     private readonly IEvaluationFactory _evaluationFactory = evaluationFactory;
 
-    public async Task<EvaluationResponse> Calculate(EvaluationRequest request)
+    public async Task<EvaluationResponse> CalculateAsync(EvaluationRequest request)
     {
         IEvaluationService? evaluationService = _evaluationFactory.GetService(request.Product.Type);
-        if (evaluationService == null) return new EvaluationResponse(false, -1);
-        EvaluationResponse response = await evaluationService.Calculate(request);
+        if (evaluationService == null) return new EvaluationResponse(false, request.Product, -1);
+        EvaluationResponse response = await evaluationService.CalculateAsync(request);
         return response;        
     }
 }
