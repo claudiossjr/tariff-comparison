@@ -2,7 +2,7 @@ using Tariff.Comparison.Domain.Model;
 
 namespace Tariff.Comparison.Domain.Interfaces.Consumer;
 
-public interface IPublishQueueService
+public interface IQueueProducerService
 {
-    Task<bool> Publish(Product product);
+    Task Produce(Product product);
 }

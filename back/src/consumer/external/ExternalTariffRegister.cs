@@ -4,18 +4,13 @@ using Tariff.Comparison.Domain.Model;
 
 namespace Tariff.Comparison.External.Consumer;
 
-public class ExternalTariffRegister : IExternalTariffRegister
+public class ExternalTariffRegister(IQueueProducerService queueProducerService) : IExternalTariffRegister
 {
-    private readonly IPublishQueueService _publishQueueService;
-    
-    public ExternalTariffRegister(IPublishQueueService publishQueueService)
-    {
-        _publishQueueService = publishQueueService;
-    }
+    private readonly IQueueProducerService _queueProducerService = queueProducerService;
 
     public async Task<bool> Register(Product product)
     {
-        await _publishQueueService.Publish(product);
+        await _queueProducerService.Produce(product);
         return true;
     }
 }
