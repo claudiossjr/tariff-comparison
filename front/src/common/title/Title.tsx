@@ -1,12 +1,16 @@
 import { FC, ReactElement } from "react";
 
-interface TitleProps{
+import './style.css'
+
+interface TitleProps {
     title: string;
 }
 
-const Title:FC<TitleProps> = ({title}): ReactElement<TitleProps> => {
+const Title: FC<TitleProps> = ({ title }): ReactElement<TitleProps> => {
     return (
-        <h1>{title}</h1>
+        <div className="title-component_value">
+            <p className="title-component_value">{title}</p>
+        </div>
     );
 }
 

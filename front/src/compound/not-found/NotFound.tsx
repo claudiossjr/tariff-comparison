@@ -1,10 +1,12 @@
 import { FC, ReactElement } from "react";
 
+import './style.css'
+
 const NotFound: FC = (): ReactElement => {
     return (
-        <>
-            <h1>No results founds at the moment</h1>
-        </>
+        <div className="not-found__container">
+            <h1>No products found</h1>
+        </div>
     );
 }
 

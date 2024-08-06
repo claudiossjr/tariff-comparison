@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  back:
+    build: ./back
+    container_name: verivox-back
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - 5127:80
+
+  front:
+    build: ./front
+    container_name: verivox-front
+    ports:
+      - 4000:80
+    links:
+      - back

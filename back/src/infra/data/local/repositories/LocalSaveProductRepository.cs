@@ -9,7 +9,14 @@ public class LocalSaveProductRepository (ProductsContext context) : ISaveProduct
 
     public async Task<Product> Save(Product product)
     {
-        _context.Products.Add(product);
+        if (_context.Products.Contains(product))
+        {
+            _context.Products.Update(product);
+        }
+        else 
+        {
+            _context.Products.Add(product);
+        }
         await _context.SaveChangesAsync();
         return product;
     }

@@ -9,10 +9,10 @@ interface HeaderListProps {
 
 const HeaderList: FC<HeaderListProps> = ({products}): ReactElement<HeaderListProps> => {
     return (
-        <>
-            <Title title='Tariffs Found:' />
+        <div>
+            <Title title='Tariffs Found' />
             <List products={products}/>
-        </>
+        </div>
     );
 }
 

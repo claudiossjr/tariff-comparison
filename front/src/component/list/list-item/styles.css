@@ -1,0 +1,19 @@
+.list-item__container {
+    width: 100%;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.list-item__wrapper {
+    padding: 16px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.list-item__item-left,
+.list-item__item-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}

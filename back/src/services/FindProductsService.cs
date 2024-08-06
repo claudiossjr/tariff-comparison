@@ -23,7 +23,7 @@ public class FindProductsService(IFindCalculableProductsNamesService findCalcula
         // Concatenate responses
         List<EvaluationResponse> evaluations = [.. (await Task.WhenAll(evaluateTasks))];
         // return the result list
-        IEnumerable<FindProductResponse> response = evaluations.Where(e => e.Successed).Select(eval => new FindProductResponse(eval.Product!.Name, eval.Product!.RawType, eval.Product!.TypeDescription, eval.Cost));
+        IEnumerable<FindProductResponse> response = evaluations.Where(e => e.Successed).Select(eval => new FindProductResponse(eval.Product!.Name, eval.Product!.RawType, eval.Product!.TypeDescription, eval.Cost)).OrderBy(c => c.AnnualCost);
         return new FindProductsResponse(response);
     }
 }
