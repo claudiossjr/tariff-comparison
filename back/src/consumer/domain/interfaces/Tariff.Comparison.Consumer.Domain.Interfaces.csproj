@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\model\Tariff.Comparison.Domain.Model.csproj" />
+    <ProjectReference Include="..\models\Tariff.Comparison.Consumer.Domain.Models.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

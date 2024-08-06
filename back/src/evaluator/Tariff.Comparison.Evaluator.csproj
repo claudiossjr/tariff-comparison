@@ -1,5 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\core\domain\interfaces\Tariff.Comparison.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\core\domain\exceptions\Tariff.Comparison.Domain.Exceptions.csproj" />
+    <ProjectReference Include="..\core\domain\enums\Tariff.Comparison.Domain.Enums.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
