@@ -10,7 +10,7 @@ const UseProducts = () => {
     const findProducts = async (annualConsumption: number) => {
         const findProductsService = new FindProductsService();
         const p = await findProductsService.findProducts(annualConsumption);
-        setProducts(ovalue => p);
+        setProducts(p);
     }
 
     return {
