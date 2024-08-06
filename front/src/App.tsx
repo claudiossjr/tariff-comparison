@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import { HeaderSearchBar } from './compound/header-searchbar/HeaderSearchBar';
+import { HeaderList } from './compound/header-list/HeaderList';
+import { NotFound } from './compound/not-found/NotFound';
+
 import './App.css';
+import { UseProducts } from './hooks/products.hooks';
 
 function App() {
+  const { products, findProducts } = UseProducts();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeaderSearchBar onSearchFired={(value) => findProducts(value)} />
+      <hr />
+      {console.log(products)}
+      {products.length > 0
+        ? <HeaderList products={products} />
+        : <NotFound />
+      }
+    </>
   );
 }
 
