@@ -1,7 +1,7 @@
 ﻿using Tariff.Comparison.Consumer.Domain.Interfaces;
 using Tariff.Comparison.Consumer.Domain.Models;
 
-namespace Tariff.Consumption.Provider.external.Client;
+namespace Tariff.Comparison.Provider.external.Client;
 
 public class ExternalClient : IExternalClient
 {

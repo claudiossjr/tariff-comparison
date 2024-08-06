@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\core\domain\model\Tariff.Comparison.Domain.Model.csproj" />
     <ProjectReference Include="..\..\..\core\domain\interfaces\Tariff.Comparison.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\..\..\core\domain\model\Tariff.Comparison.Domain.Model.csproj" />
+    <ProjectReference Include="..\..\..\core\domain\enums\Tariff.Comparison.Domain.Enums.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.7" />
   </ItemGroup>
 
   <PropertyGroup>
