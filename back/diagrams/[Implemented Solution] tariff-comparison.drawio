@@ -1,0 +1,117 @@
+<mxfile host="65bd71144e">
+    <diagram id="u9kj46w-ViDRI1fd64Ng" name="Page-1">
+        <mxGraphModel dx="1770" dy="913" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="26" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="2" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Client" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="505" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5" target="11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="External &lt;br&gt;Tariff &lt;br&gt;Provider" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Tariff Comparison Ecosystem" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="50" width="570" height="840" as="geometry">
+                        <mxRectangle x="240" y="50" width="210" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="External Tariff Consumer" style="swimlane;whiteSpace=wrap;html=1;" parent="27" vertex="1">
+                    <mxGeometry x="50" y="50" width="450" height="220" as="geometry">
+                        <mxRectangle x="290" y="110" width="180" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="External Tariff Register" style="rounded=0;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="240" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="3" source="11" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="External Tariff &lt;br&gt;Consumer&lt;br&gt;&lt;b&gt;ETL&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+                    <mxGeometry x="60" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Tariff Comparison" style="swimlane;whiteSpace=wrap;html=1;" parent="27" vertex="1">
+                    <mxGeometry x="20" y="365" width="520" height="445" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=75;entryPerimeter=0;startArrow=classic;startFill=1;" parent="6" source="7" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="6" source="7" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Tariff Comparison&lt;br&gt;Service" style="rounded=0;whiteSpace=wrap;html=1;" parent="6" vertex="1">
+                    <mxGeometry x="75" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="6" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="325" y="100" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="Tariff Consumer" style="rounded=0;whiteSpace=wrap;html=1;" parent="6" vertex="1">
+                    <mxGeometry x="270" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Tariff Database&lt;br&gt;&lt;b&gt;Memory&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="6" vertex="1">
+                    <mxGeometry x="365" y="120" width="100" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="6" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="336.42857142857156" y="100" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="Cache Service&lt;br&gt;&lt;b&gt;Memory&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="6" vertex="1">
+                    <mxGeometry x="235" y="225" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;endArrow=diamondThin;endFill=1;" edge="1" parent="6" source="28" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Tariff Calculator Servicer&lt;br&gt;&lt;b&gt;Factory&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="6">
+                    <mxGeometry x="75" y="230" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=none;html=1;entryX=0.32;entryY=1.014;entryDx=0;entryDy=0;endArrow=diamondThin;endFill=1;entryPerimeter=0;" edge="1" parent="6" target="28">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="99.8353188507358" y="375" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="Product Type 1&lt;br&gt;Tariff Calculator Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="6">
+                    <mxGeometry x="40" y="375" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;html=1;endArrow=diamondThin;endFill=1;entryX=0.92;entryY=1.014;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="6" target="28">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="347.29152067274026" y="375" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="Product Type N&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Tariff Calculator Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="6">
+                    <mxGeometry x="350" y="375" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=none;html=1;endArrow=diamondThin;endFill=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="6" target="28">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="197.82608695652152" y="375" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="Product Type 2&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Tariff Calculator Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="6">
+                    <mxGeometry x="165" y="375" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;...&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="6">
+                    <mxGeometry x="295" y="385" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.queue_generic;pointerEvents=1;" parent="27" vertex="1">
+                    <mxGeometry x="305" y="290" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="27" source="15" target="19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="27" source="4" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Tariff &lt;br&gt;Registration &lt;br&gt;Queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="27" vertex="1">
+                    <mxGeometry x="395" y="280" width="90" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
